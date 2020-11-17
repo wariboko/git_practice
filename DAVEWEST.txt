@@ -1,0 +1,1 @@
+True and false are the only way BOOL types and any variable that is asisgned one of those values is called a boolean variable. The eassiest way is to simply assign true or false to a variable.
