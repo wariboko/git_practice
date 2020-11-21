@@ -1,2 +1,35 @@
 True and false are the only way BOOL types and any variable that is asisgned one of those values is called a boolean variable. The eassiest way is to simply assign true or false to a variable.
 A repository is usually used to organize a single project. Repositories can contain folders and files, images, videos, spreadsheets, and data sets – anything your project needs. We recommend including a README, or a file with information about your project. GitHub makes it easy to add one at the same time you create your new repository. It also offers other common options such as a license file.
+def ground_shipping(weight,flat_charge = 20.00):
+  if weight <= 2:
+    return cost(weight * 1.50 + flat_charge)
+  elif weight >2 and weight <= 6:
+    return weight * 3.00 + flat_charge
+  elif weight > 6 and weight <= 10:
+    return weight * 4.00 + flat_charge
+  elif weight > 10:
+    return weight * 4.75 + flat_charge
+
+premium_ground_shipping = 125.00
+
+def drone_shipping(weight):
+  if weight <= 2:
+    return weight * 4.50
+  elif weight >2 and weight <= 6:
+    return weight * 9.00
+  elif weight > 6 and weight <= 10:
+    return weight * 12.00
+  elif weight > 10:
+    return weight * 14.25
+
+def cheapest_shipping(weight):
+    ground = ground_shipping(weight)
+    drone = drone_shipping(weight)
+    premium = premium_ground_shipping
+    if ground < premium and ground < drone:
+        return You should ship using ground shipping, It cost  + str(ground)
+    if drone < ground and drone < premium:
+        return You should ship using drone shipping, It cost  + str(drone)
+    else:
+        return You should ship using premium shipping, It cost  + str(premium)
+print(cheapest_shipping(41.5))
